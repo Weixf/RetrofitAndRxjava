@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="60dp"
+    android:minWidth="100dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@layout/layout_loading_dialog"/>
+
+    <TextView
+        android:id="@+id/loading_tip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="正在登录…"
+        android:textColor="#555555"
+        android:textSize="14sp" />
+
+</LinearLayout>
