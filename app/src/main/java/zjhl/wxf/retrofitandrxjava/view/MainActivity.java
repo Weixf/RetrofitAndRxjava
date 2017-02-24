@@ -1,6 +1,8 @@
-package zjhl.wxf.retrofitandrxjava;
+package zjhl.wxf.retrofitandrxjava.view;
 
 import android.os.Bundle;
+import android.text.format.DateUtils;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.trello.rxlifecycle.ActivityEvent;
@@ -10,7 +12,10 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.schedulers.Schedulers;
+import zjhl.wxf.retrofitandrxjava.R;
 import zjhl.wxf.retrofitandrxjava.api.RetrofitUtil;
+import zjhl.wxf.retrofitandrxjava.bean.Bean;
+import zjhl.wxf.retrofitandrxjava.util.DateUtil;
 import zjhl.wxf.retrofitandrxjava.util.DialogHelper;
 
 
@@ -83,20 +88,6 @@ public class MainActivity extends RxAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final TextView text = (TextView) findViewById(R.id.text);
-//        ApiWrap.getInstance().detail("Guolei1130")
-//                .compose(new RxHelper<Bean>("正在加载，请稍候").io_main(MainActivity.this))
-//                .subscribe(new RxSubscriber<Bean>() {
-//                    @Override
-//                    public void _onNext(Bean response) {
-//                        text.setText(response.getName());
-//                    }
-//
-//                    @Override
-//                    public void _onError(String msg) {
-//                        Log.e(TAG, "_onError: "+msg );
-//                    }
-//                });
-
         RetrofitUtil.getApiServer().getDetail("Guolei1130")
                 .compose(this.<Bean>bindUntilEvent(ActivityEvent.PAUSE))
                 .subscribeOn(Schedulers.io())
@@ -121,24 +112,10 @@ public class MainActivity extends RxAppCompatActivity {
                     @Override
                     public void onNext(Bean bean) {
                         text.setText(bean.getName());
+                        Log.e(TAG, "onNext: "+ DateUtils.formatDateTime(MainActivity.this,System.currentTimeMillis(),1));
+                        Log.e(TAG, "onNext: "+ DateUtil.getTimeNum());
                     }
                 });
-//        Retrofit retrofit=new Retrofit.Builder()
-//                .baseUrl("https://api.github.com")
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//        ApiServer server=retrofit.create(ApiServer.class);
-//        beanCall.enqueue(new Callback<Bean>() {
-//            @Override
-//            public void onResponse(Call<Bean> call, Response<Bean> response) {
-//                Log.e(TAG, "onResponse: "+response.body().toString()+ call.isCanceled());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Bean> call, Throwable t) {
-//
-//            }
-//        });
     }
 }
 

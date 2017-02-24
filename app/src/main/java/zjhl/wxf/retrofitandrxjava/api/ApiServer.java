@@ -3,7 +3,7 @@ package zjhl.wxf.retrofitandrxjava.api;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import rx.Observable;
-import zjhl.wxf.retrofitandrxjava.Bean;
+import zjhl.wxf.retrofitandrxjava.bean.Bean;
 
 /**
  * Created by Weixf

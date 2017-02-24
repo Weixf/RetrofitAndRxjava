@@ -1,4 +1,4 @@
-package zjhl.wxf.retrofitandrxjava;
+package zjhl.wxf.retrofitandrxjava.bean;
 
 /**
  * Created by Weixf

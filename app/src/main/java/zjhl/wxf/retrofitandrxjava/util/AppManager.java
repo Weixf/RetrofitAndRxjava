@@ -5,11 +5,9 @@ import android.content.Context;
 import java.util.Stack;
 
 /**
- * activity堆栈式管理
- *
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @created 2014年10月30日 下午6:22:05
- *
+ * Create by Weixf
+ * Date 2017年2月23日
+ * Describe activity堆栈式管理
  */
 public class AppManager {
 
