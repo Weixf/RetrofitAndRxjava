@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 /**
  * Created by Weixf
- * Date on 2017/2/23.
+ * Date on 2017/2/23
  * Describe 检查网络的工具类
  */
 
