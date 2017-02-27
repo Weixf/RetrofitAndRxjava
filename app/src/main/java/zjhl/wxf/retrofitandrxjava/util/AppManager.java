@@ -62,6 +62,14 @@ public class AppManager {
             activity = null;
         }
     }
+    public void removeActivity(Class<?> cls) {
+        for (Activity instance : activityStack) {
+            if (instance.getClass().equals(cls)) {
+                activityStack.remove(instance);
+                break;
+            }
+        }
+    }
 
     /**
      * 结束指定类名的Activity

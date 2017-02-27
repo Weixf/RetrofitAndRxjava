@@ -6,7 +6,6 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.trello.rxlifecycle.ActivityEvent;
-import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -14,6 +13,7 @@ import rx.functions.Action0;
 import rx.schedulers.Schedulers;
 import zjhl.wxf.retrofitandrxjava.R;
 import zjhl.wxf.retrofitandrxjava.api.RetrofitUtil;
+import zjhl.wxf.retrofitandrxjava.base.BaseActivity;
 import zjhl.wxf.retrofitandrxjava.bean.Bean;
 import zjhl.wxf.retrofitandrxjava.util.DateUtil;
 import zjhl.wxf.retrofitandrxjava.util.DialogHelper;
@@ -80,7 +80,7 @@ import zjhl.wxf.retrofitandrxjava.util.DialogHelper;
  *             Schedulers.newThread() 代表一个常规的新线程
  *             AndroidSchedulers.mainThread() 代表Android的主线程
  */
-public class MainActivity extends RxAppCompatActivity {
+public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
 
     @Override
