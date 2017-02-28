@@ -1,3 +1,2 @@
 # RetrofitAndRxjava
-第一次使用github,简单的使用Rxjava和Retrofit
-
+简单的使用Rxjava和Retrofit，在链式结构中使用rxlifecycle管理生命周期
